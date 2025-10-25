@@ -56,18 +56,18 @@ export const TabWidget = () => {
   };
 
   return (
-    <div className="bg-[#1a1a1a] rounded-[28px] p-6 shadow-xl">
+    <div className="bg-[#363C43] rounded-[28px] p-6 shadow-xl bg-linear-to-br border border-[#24262c]">
       <div className="flex items-start justify-between mb-6">
         {/* Tabs */}
-        <div className="bg-[#141414] rounded-3xl p-1.5 flex gap-1">
+        <div className="bg-linear-to-br from-[#18191e] to-[#1e2025] rounded-3xl p-1.5 flex gap-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-3 rounded-3xl text-base font-medium transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-[#2a2a2a] text-white shadow-sm"
-                  : "text-gray-400 hover:bg-[#222222] hover:text-white"
+                  ? "bg-linear-to-br from-[#2a2b33] to-[#2e2f38] text-white shadow-[0_0_8px_rgba(0,0,0,0.6)]"
+                  : "text-gray-400 hover:bg-[#25262c] hover:text-white"
               }`}
             >
               {tab.label}
@@ -76,7 +76,7 @@ export const TabWidget = () => {
         </div>
 
         {/* Help icon */}
-        <button className="p-2 rounded-full bg-[#141414] hover:bg-[#222222] transition-colors">
+        <button className="p-2 rounded-full bg-[#18191e] hover:bg-[#23252b] transition-colors">
           <HelpCircle className="w-5 h-5 text-gray-400 hover:text-white" />
         </button>
       </div>

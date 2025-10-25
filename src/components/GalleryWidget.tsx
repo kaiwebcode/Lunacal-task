@@ -33,7 +33,7 @@ export const GalleryWidget = () => {
   const visibleImages = images.slice(startIndex, startIndex + 3);
 
   return (
-    <div className="bg-neutral-900 rounded-3xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.6)] border border-neutral-800">
+    <div className="bg-[#363C43] rounded-3xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.6)] border border-neutral-800">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
@@ -52,7 +52,7 @@ export const GalleryWidget = () => {
             className="bg-neutral-800 hover:bg-neutral-700 text-neutral-100 rounded-full px-6 py-2 shadow-md font-medium text-sm flex items-center gap-2 transition-all"
           >
             <Plus className="w-4 h-4" />
-            ADD IMAGE
+            ADD IMAGE 
           </Button>
           <div className="flex gap-2">
             <button
