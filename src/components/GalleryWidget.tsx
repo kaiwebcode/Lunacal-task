@@ -37,9 +37,9 @@ export const GalleryWidget = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors">
+          <Button className="p-2 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors">
             <HelpCircle className="w-5 h-5 text-neutral-400" />
-          </button>
+          </Button>
           <div className="bg-neutral-800 rounded-3xl px-8 py-3">
             <h2 className="text-lg font-semibold text-neutral-100">Gallery</h2>
           </div>
@@ -49,26 +49,26 @@ export const GalleryWidget = () => {
         <div className="flex items-center gap-3">
           <Button
             onClick={handleAddImage}
-            className="bg-neutral-800 hover:bg-neutral-700 text-neutral-100 rounded-full px-6 py-2 shadow-md font-medium text-sm flex items-center gap-2 transition-all"
+            className="bg-[#363C43] hover:bg-neutral-700 border-none text-neutral-100 rounded-full px-6 py-2 shadow-md font-medium text-sm flex items-center gap-2 transition-all"
           >
             <Plus className="w-4 h-4" />
             ADD IMAGE 
           </Button>
           <div className="flex gap-2">
-            <button
+            <Button
               onClick={handlePrevious}
               disabled={startIndex === 0}
               className="p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
             >
               <ChevronLeft className="w-5 h-5 text-neutral-100" />
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleNext}
               disabled={startIndex + 3 >= images.length}
               className="p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
             >
               <ChevronRight className="w-5 h-5 text-neutral-100" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>
