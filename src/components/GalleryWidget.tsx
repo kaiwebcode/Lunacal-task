@@ -6,7 +6,11 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 
 export const GalleryWidget = () => {
-  const [images, setImages] = useState<string[]>([gallery1, gallery2, gallery3]);
+  const [images, setImages] = useState<string[]>([
+    gallery1,
+    gallery2,
+    gallery3,
+  ]);
   const [startIndex, setStartIndex] = useState(0);
 
   const handleAddImage = () => {
@@ -28,7 +32,8 @@ export const GalleryWidget = () => {
   };
 
   const handlePrevious = () => startIndex > 0 && setStartIndex(startIndex - 1);
-  const handleNext = () => startIndex + 3 < images.length && setStartIndex(startIndex + 1);
+  const handleNext = () =>
+    startIndex + 3 < images.length && setStartIndex(startIndex + 1);
 
   const visibleImages = images.slice(startIndex, startIndex + 3);
 
@@ -52,7 +57,7 @@ export const GalleryWidget = () => {
             className="bg-[#363C43] hover:bg-neutral-600 text-neutral-100 border-t rounded-full cursor-pointer px-20 py-6 shadow-xl font-medium text-sm flex items-center gap-2 transition-all"
           >
             <Plus className="w-4 h-4" />
-            ADD IMAGE 
+            ADD IMAGE
           </Button>
           <div className="flex gap-2">
             <Button
