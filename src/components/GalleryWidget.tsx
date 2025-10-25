@@ -19,7 +19,7 @@ export const GalleryWidget = () => {
         const reader = new FileReader();
         reader.onload = (e) => {
           const result = e.target?.result as string;
-          setImages((prev) => [...prev, result]);
+          setImages([result, ...images]);
         };
         reader.readAsDataURL(file);
       }
@@ -33,23 +33,23 @@ export const GalleryWidget = () => {
   const visibleImages = images.slice(startIndex, startIndex + 3);
 
   return (
-    <div className="bg-[#1a1a1a]/90 backdrop-blur-xl rounded-3xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.6)] border border-[#262626] transition-all">
+    <div className="bg-neutral-900 rounded-3xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.6)] border border-neutral-800">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full bg-[#2a2a2a] hover:bg-[#333] transition-colors shadow-inner">
-            <HelpCircle className="w-5 h-5 text-[#a1a1a1]" />
+          <button className="p-2 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors">
+            <HelpCircle className="w-5 h-5 text-neutral-400" />
           </button>
-          <div className="bg-[#2a2a2a] rounded-3xl px-8 py-3 shadow-inner">
-            <h2 className="text-lg font-semibold text-[#e6e6e6]">Gallery</h2>
+          <div className="bg-neutral-800 rounded-3xl px-8 py-3">
+            <h2 className="text-lg font-semibold text-neutral-100">Gallery</h2>
           </div>
         </div>
 
         {/* Controls */}
         <div className="flex items-center gap-3">
           <Button
-            className="bg-[#2f2f2f] hover:bg-[#3a3a3a] rounded-full border border-[#333] px-6 py-2 shadow-lg font-medium text-sm text-[#e6e6e6] flex items-center gap-2 transition-all"
             onClick={handleAddImage}
+            className="bg-neutral-800 hover:bg-neutral-700 text-neutral-100 rounded-full px-6 py-2 shadow-md font-medium text-sm flex items-center gap-2 transition-all"
           >
             <Plus className="w-4 h-4" />
             ADD IMAGE
@@ -58,16 +58,16 @@ export const GalleryWidget = () => {
             <button
               onClick={handlePrevious}
               disabled={startIndex === 0}
-              className="p-3 rounded-full bg-[#2a2a2a] hover:bg-[#333] transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
+              className="p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
             >
-              <ChevronLeft className="w-5 h-5 text-[#e6e6e6]" />
+              <ChevronLeft className="w-5 h-5 text-neutral-100" />
             </button>
             <button
               onClick={handleNext}
               disabled={startIndex + 3 >= images.length}
-              className="p-3 rounded-full bg-[#2a2a2a] hover:bg-[#333] transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
+              className="p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
             >
-              <ChevronRight className="w-5 h-5 text-[#e6e6e6]" />
+              <ChevronRight className="w-5 h-5 text-neutral-100" />
             </button>
           </div>
         </div>
@@ -78,7 +78,7 @@ export const GalleryWidget = () => {
         {visibleImages.map((image, index) => (
           <div
             key={startIndex + index}
-            className="aspect-square rounded-3xl overflow-hidden bg-[#2a2a2a] shadow-[0_4px_15px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.6)] transition-all"
+            className="aspect-square rounded-2xl overflow-hidden bg-neutral-800 shadow-[0_4px_15px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.6)] transition-all"
           >
             <img
               src={image}
