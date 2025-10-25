@@ -40,7 +40,7 @@ export const GalleryWidget = () => {
           <Button className="p-2 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors">
             <HelpCircle className="w-5 h-5 text-neutral-400" />
           </Button>
-          <div className="bg-neutral-800 rounded-3xl px-8 py-3">
+          <div className="bg-[#171717] rounded-3xl px-8 py-3">
             <h2 className="text-lg font-semibold text-neutral-100">Gallery</h2>
           </div>
         </div>
@@ -49,7 +49,7 @@ export const GalleryWidget = () => {
         <div className="flex items-center gap-3">
           <Button
             onClick={handleAddImage}
-            className="bg-[#363C43] hover:bg-neutral-700 border-none text-neutral-100 rounded-full px-6 py-2 shadow-md font-medium text-sm flex items-center gap-2 transition-all"
+            className="bg-[#363C43] hover:bg-neutral-600 text-neutral-100 border-t rounded-full cursor-pointer px-20 py-6 shadow-xl font-medium text-sm flex items-center gap-2 transition-all"
           >
             <Plus className="w-4 h-4" />
             ADD IMAGE 
@@ -60,14 +60,14 @@ export const GalleryWidget = () => {
               disabled={startIndex === 0}
               className="p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
             >
-              <ChevronLeft className="w-5 h-5 text-neutral-100" />
+              <ChevronLeft className="w-5 h-5 text-[#6F787C]" />
             </Button>
             <Button
               onClick={handleNext}
               disabled={startIndex + 3 >= images.length}
-              className="p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-md"
+              className="p-3 rounded-full bg-[#161718] hover:bg-neutral-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shadow-xl"
             >
-              <ChevronRight className="w-5 h-5 text-neutral-100" />
+              <ChevronRight className="w-5 h-5 text-[#6F787C]" />
             </Button>
           </div>
         </div>
